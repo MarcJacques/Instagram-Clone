@@ -11,6 +11,11 @@
 		052FA5AB2793860B008A3E57 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052FA5AA2793860B008A3E57 /* ContentView.swift */; };
 		052FA5AD2793860C008A3E57 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 052FA5AC2793860C008A3E57 /* Assets.xcassets */; };
 		052FA5B02793860C008A3E57 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 052FA5AF2793860C008A3E57 /* Preview Assets.xcassets */; };
+		052FA5B727938747008A3E57 /* HomeFeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052FA5B627938747008A3E57 /* HomeFeedView.swift */; };
+		052FA5BA27938774008A3E57 /* ExploreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052FA5B927938774008A3E57 /* ExploreView.swift */; };
+		052FA5BC2793879C008A3E57 /* NotificationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052FA5BB2793879C008A3E57 /* NotificationsView.swift */; };
+		052FA5BE279387AB008A3E57 /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052FA5BD279387AB008A3E57 /* CameraView.swift */; };
+		052FA5C0279387C0008A3E57 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052FA5BF279387C0008A3E57 /* ProfileView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +24,11 @@
 		052FA5AA2793860B008A3E57 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		052FA5AC2793860C008A3E57 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		052FA5AF2793860C008A3E57 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		052FA5B627938747008A3E57 /* HomeFeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeFeedView.swift; sourceTree = "<group>"; };
+		052FA5B927938774008A3E57 /* ExploreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreView.swift; sourceTree = "<group>"; };
+		052FA5BB2793879C008A3E57 /* NotificationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsView.swift; sourceTree = "<group>"; };
+		052FA5BD279387AB008A3E57 /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
+		052FA5BF279387C0008A3E57 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,7 +62,7 @@
 			isa = PBXGroup;
 			children = (
 				052FA5A82793860B008A3E57 /* InstagramApp.swift */,
-				052FA5AA2793860B008A3E57 /* ContentView.swift */,
+				052FA5B827938756008A3E57 /* Views */,
 				052FA5AC2793860C008A3E57 /* Assets.xcassets */,
 				052FA5AE2793860C008A3E57 /* Preview Content */,
 			);
@@ -65,6 +75,19 @@
 				052FA5AF2793860C008A3E57 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		052FA5B827938756008A3E57 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				052FA5AA2793860B008A3E57 /* ContentView.swift */,
+				052FA5B627938747008A3E57 /* HomeFeedView.swift */,
+				052FA5B927938774008A3E57 /* ExploreView.swift */,
+				052FA5BD279387AB008A3E57 /* CameraView.swift */,
+				052FA5BB2793879C008A3E57 /* NotificationsView.swift */,
+				052FA5BF279387C0008A3E57 /* ProfileView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,6 +162,11 @@
 			files = (
 				052FA5AB2793860B008A3E57 /* ContentView.swift in Sources */,
 				052FA5A92793860B008A3E57 /* InstagramApp.swift in Sources */,
+				052FA5BA27938774008A3E57 /* ExploreView.swift in Sources */,
+				052FA5BE279387AB008A3E57 /* CameraView.swift in Sources */,
+				052FA5B727938747008A3E57 /* HomeFeedView.swift in Sources */,
+				052FA5C0279387C0008A3E57 /* ProfileView.swift in Sources */,
+				052FA5BC2793879C008A3E57 /* NotificationsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
