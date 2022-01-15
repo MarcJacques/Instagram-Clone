@@ -9,7 +9,42 @@ import SwiftUI
 
 struct HomeFeedView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationView {
+            ScrollView {
+                VStack {
+                    StoriesView()
+                        .padding()
+              
+                    
+                }
+            }
+            .navigationTitle("Instagram")
+        }
+    }
+    
+}
+struct StoriesView: View  {
+    var body: some View {
+        ScrollView(.horizontal) {
+            HStack {
+                ForEach(0...10, id: \.self) { num in
+                    StoryView(imageName: "foo")
+                }
+            }
+        }
+    }
+}
+
+struct StoryView: View {
+    let imageName: String
+    
+    var body: some View {
+        Image(imageName)
+            .resizable()
+            .frame(width: 90, height: 90, alignment: .center)
+            .background(Color.blue)
+            .cornerRadius(45)
+            .padding(3)
     }
 }
 
