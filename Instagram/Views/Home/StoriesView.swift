@@ -1,5 +1,5 @@
 //
-//  HomeFeedView.swift
+//  StoriesView.swift
 //  Instagram
 //
 //  Created by Marc Jacques on 1/15/22.
@@ -7,22 +7,6 @@
 
 import SwiftUI
 
-struct HomeFeedView: View {
-    var body: some View {
-        NavigationView {
-            ScrollView {
-                VStack {
-                    StoriesView()
-                        .padding()
-              
-                    
-                }
-            }
-            .navigationTitle("Instagram")
-        }
-    }
-    
-}
 struct StoriesView: View  {
     var body: some View {
         ScrollView(.horizontal) {
@@ -48,8 +32,8 @@ struct StoryView: View {
     }
 }
 
-struct HomeFeedView_Previews: PreviewProvider {
+struct StoriesView_Previews: PreviewProvider {
     static var previews: some View {
-        HomeFeedView()
+        StoriesView()
     }
 }

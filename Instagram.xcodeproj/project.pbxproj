@@ -16,6 +16,7 @@
 		052FA5BC2793879C008A3E57 /* NotificationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052FA5BB2793879C008A3E57 /* NotificationsView.swift */; };
 		052FA5BE279387AB008A3E57 /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052FA5BD279387AB008A3E57 /* CameraView.swift */; };
 		052FA5C0279387C0008A3E57 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052FA5BF279387C0008A3E57 /* ProfileView.swift */; };
+		054173B827938EBF00B388F6 /* StoriesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 054173B727938EBF00B388F6 /* StoriesView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		052FA5BB2793879C008A3E57 /* NotificationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsView.swift; sourceTree = "<group>"; };
 		052FA5BD279387AB008A3E57 /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
 		052FA5BF279387C0008A3E57 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		054173B727938EBF00B388F6 /* StoriesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoriesView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,13 +83,22 @@
 			isa = PBXGroup;
 			children = (
 				052FA5AA2793860B008A3E57 /* ContentView.swift */,
-				052FA5B627938747008A3E57 /* HomeFeedView.swift */,
+				054173B627938E9A00B388F6 /* Home */,
 				052FA5B927938774008A3E57 /* ExploreView.swift */,
 				052FA5BD279387AB008A3E57 /* CameraView.swift */,
 				052FA5BB2793879C008A3E57 /* NotificationsView.swift */,
 				052FA5BF279387C0008A3E57 /* ProfileView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		054173B627938E9A00B388F6 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				052FA5B627938747008A3E57 /* HomeFeedView.swift */,
+				054173B727938EBF00B388F6 /* StoriesView.swift */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -160,6 +171,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				054173B827938EBF00B388F6 /* StoriesView.swift in Sources */,
 				052FA5AB2793860B008A3E57 /* ContentView.swift in Sources */,
 				052FA5A92793860B008A3E57 /* InstagramApp.swift in Sources */,
 				052FA5BA27938774008A3E57 /* ExploreView.swift in Sources */,
