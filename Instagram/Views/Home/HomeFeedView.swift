@@ -16,6 +16,7 @@ struct HomeFeedView: View {
                     
                     ForEach(0...30, id: \.self) { num in
                         PostView()
+                            .padding(.bottom, 20)
                     }
                 }
             }
@@ -27,36 +28,66 @@ struct HomeFeedView: View {
 struct PostView: View {
     var body: some View {
         VStack {
-            HStack {
-                // User image
-                Image(systemName: "person.circle")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: 40, height: 40, alignment: .center)
-                    .foregroundColor(Color.blue)
-                
-                Text("MarcJacques")
-                    .foregroundColor(Color.blue)
-                    .bold()
-                
-                Spacer()
-            }
+            PostHeaderView()
             .padding()
             
             Image("foo")
                 .frame(width: 430, height: 430, alignment: .center)
                 .background(Color(.secondarySystemBackground))
-           
+            
             PostActionButtonsView()
             
             HStack {
                 // like count
+                Image(systemName: "heart.fill")
+                    .resizable()
+                    .foregroundColor(Color.red)
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: 30, height: 30, alignment: .center)
+                
+                Text("32 Likes")
+                    .font(.system(size: 20))
+                    .foregroundColor(Color(.link))
+                Spacer()
             }
+            .padding()
+            .padding(.top, -20)
             
+            //Photo Caption
+            Text("Hope 2022 is better than the last 2 years. #happynewyear")
+                .font(.headline)
+                .padding(.top, -15)
+            
+            HStack {
+            Text("1 hour ago")
+                .foregroundColor(Color(.secondaryLabel))
+                .multilineTextAlignment(.leading)
+                Spacer()
+            }
+            .padding(.leading, 12)
         }
-        
     }
 }
+
+struct PostHeaderView: View {
+    var body: some View {
+        HStack {
+            // User image
+            Image(systemName: "person.circle")
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(width: 40, height: 40, alignment: .center)
+                .foregroundColor(Color.blue)
+            
+            Text("MarcJacques")
+                .foregroundColor(Color.blue)
+                .bold()
+            
+            Spacer()
+        }
+    }
+}
+
 struct PostActionButtonsView: View {
     var body: some View {
         HStack {
@@ -94,7 +125,7 @@ struct PostActionButtonsView: View {
             }
             
             Spacer()
-        
+            
         }
         .padding()
         

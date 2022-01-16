@@ -9,7 +9,7 @@ import SwiftUI
 
 struct StoriesView: View  {
     var body: some View {
-        ScrollView(.horizontal) {
+        ScrollView(.horizontal, showsIndicators: false) {
             HStack {
                 ForEach(0...10, id: \.self) { num in
                     StoryView(imageName: "foo")
