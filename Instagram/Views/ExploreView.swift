@@ -8,13 +8,54 @@
 import SwiftUI
 
 struct ExploreView: View {
+    @State var text = ""
+    
+    var imageNames = {1...4}().map({ "Image \($0)" })
+    
+    var columns: [GridItem] = [
+        GridItem(.flexible(minimum: 200)),
+        GridItem(.flexible(minimum: 200))
+    ]
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationView {
+            VStack {
+                TextField("Search...", text: $text)
+                    .padding(10)
+                    .background(Color(.secondarySystemBackground))
+                    .cornerRadius(12)
+                    .padding()
+                
+                ScrollView {
+                    LazyVGrid(columns:columns, content:  {
+                        ForEach(0...20, id: \.self) { num in
+                            let name = imageNames.randomElement() ?? "Image 1"
+                            
+                            NavigationLink(
+                            destination: PostView(userImageName: "user4", imageName: name),
+                            label: {
+                                Image(name)
+                                    .resizable()
+                                    .frame(width: 200, height: 200, alignment: .center)
+                                    .aspectRatio(contentMode: .fill)
+                                    .foregroundColor(Color.red)
+                            })
+                            
+                               
+                        }
+                        
+                    })
+                }
+                Spacer()
+            }
+            .navigationTitle("Explore")
+        }
     }
 }
 
 struct ExploreVioew_Previews: PreviewProvider {
     static var previews: some View {
         ExploreView()
+            .preferredColorScheme(.dark)
     }
 }
