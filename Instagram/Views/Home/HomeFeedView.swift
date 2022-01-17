@@ -8,15 +8,16 @@
 import SwiftUI
 
 struct HomeFeedView: View {
+    
     var body: some View {
         NavigationView {
             ScrollView {
                 VStack {
                     StoriesView()
                     
-                    ForEach(0...30, id: \.self) { num in
-                        PostView(userImageName: "user4",
-                                 imageName: "Image 4")
+                    ForEach(0...4, id: \.self) { num in
+                        PostView(userImageName: "user\(num)",
+                                 imageName: "Image \(num)")
                             .padding(.bottom, 20)
                     }
                 }
@@ -37,11 +38,10 @@ struct PostView: View {
             
             Image(imageName)
                 .resizable()
-//                .aspectRatio(contentMode: .fill)
                 .frame(width: 430, height: 430, alignment: .center)
-                .aspectRatio(contentMode: .fit)
+                .aspectRatio(contentMode: .fill)
                 .background(Color(.secondarySystemBackground))
-                .padding()
+             
             
             PostActionButtonsView()
             
