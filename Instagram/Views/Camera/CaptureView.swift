@@ -13,10 +13,12 @@ struct CaptureView: UIViewControllerRepresentable {
     
     @Binding var isShown: Bool
     @Binding var image: Image?
+    @Binding var isUsingCamera: Bool
     
-    init(isShown: Binding<Bool>, image : Binding<Image?>) {
+    init(isShown: Binding<Bool>, image : Binding<Image?>, isUsingCamera: Binding<Bool>) {
         _isShown = isShown
         _image = image
+        _isUsingCamera = isUsingCamera
     }
     
     func makeCoordinator() -> Coordinator {
@@ -25,7 +27,7 @@ struct CaptureView: UIViewControllerRepresentable {
     
     func makeUIViewController(context: UIViewControllerRepresentableContext<CaptureView>) -> UIImagePickerController {
         let picker = UIImagePickerController()
-        picker.sourceType = .photoLibrary
+        picker.sourceType = isUsingCamera ? .camera : .photoLibrary
         picker.delegate = context.coordinator
         return picker
     }
@@ -43,6 +45,7 @@ class Coordinator: NSObject, UINavigationControllerDelegate, UIImagePickerContro
     init(isShown: Binding<Bool>, image: Binding<Image?>) {
         _isShown = isShown
         _image =  image
+      
     }
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
