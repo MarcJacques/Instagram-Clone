@@ -11,11 +11,11 @@ struct CameraView: View {
     
     @State var isShowingPicker = false
     
-    var image: Image? = nil
+    @State var image: Image? = nil
     
     var body: some View {
         NavigationView {
-            VStack {
+            ZStack {
                 VStack {
                     image?
                         .resizable()
@@ -30,7 +30,8 @@ struct CameraView: View {
                 }
                 
                 if (isShowingPicker) {
-                    CaptureView()
+                    CaptureView(isShown: $isShowingPicker,
+                                image: $image)
                 }
             }
             .navigationTitle("Camera")
