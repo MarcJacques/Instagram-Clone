@@ -27,13 +27,24 @@ struct ProfileHeaderView: View  {
                 Image("user\(Int.random(in: 1...4))")
                     .resizable()
                     .aspectRatio( contentMode: .fill)
-                    .frame(width: 90, height: 90, alignment: .center)
-                    .cornerRadius(45)
+                    .frame(width: 120, height: 120, alignment: .center)
+                    .cornerRadius(60)
                 VStack {
                     HeaderCountButtonsView()
+                    
+                    Button(action: {
+                        
+                    }, label: {
+                        Text("Edit Profile")
+                            .foregroundColor(Color(.label))
+                            .frame(width: 220, height: 44, alignment: .center)
+                            .background(Color(.secondarySystemBackground))
+                            .cornerRadius(8)
+                    })
                 }
             }
             //edit profile button
+            
             //user bio
         }
     }
