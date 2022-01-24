@@ -8,11 +8,25 @@
 import SwiftUI
 
 struct ProfileView: View {
+    
+    var columns: [GridItem] = [
+        GridItem(.adaptive(minimum: 100, maximum: 150), spacing: 0, alignment: .center)
+                 ]
+    
     var body: some View {
         NavigationView {
             VStack {
                 ProfileHeaderView()
-                Spacer()
+                    .padding()
+                LazyVGrid(columns: columns, content: {
+                    ForEach(0...90, id: \.self) { num in
+                        let imageName = "Image \(Int.random(in: 1...4))"
+                        Image(imageName)
+                            .resizeable()
+                            .aspectRatio(contentMode: .fill)
+                        
+                    }
+                })
             }
             .navigationBarTitle("instaClone", displayMode: .inline)
         }
@@ -27,8 +41,8 @@ struct ProfileHeaderView: View  {
                 Image("user\(Int.random(in: 1...4))")
                     .resizable()
                     .aspectRatio( contentMode: .fill)
-                    .frame(width: 120, height: 120, alignment: .center)
-                    .cornerRadius(60)
+                    .frame(width: 100, height: 100, alignment: .center)
+                    .cornerRadius(50)
                 VStack {
                     HeaderCountButtonsView()
                     
@@ -43,9 +57,12 @@ struct ProfileHeaderView: View  {
                     })
                 }
             }
-            //edit profile button
-            
             //user bio
+            HStack {
+                Text("On a journey to learn Swift.\nAlso SwiftUI is really cool!")
+                    .multilineTextAlignment(.leading)
+                Spacer()
+            }
         }
     }
 }
@@ -69,7 +86,7 @@ struct HeaderCountButtonsView: View {
                     .foregroundColor(Color(.label))
                     .multilineTextAlignment(.center)
             })
-                .padding()
+                .padding(5)
             Button(action: {
                 //nil
             }, label: {
@@ -77,7 +94,7 @@ struct HeaderCountButtonsView: View {
                     .foregroundColor(Color(.label))
                     .multilineTextAlignment(.center)
             })
-                .padding()
+                .padding(5)
         }
     }
 }
