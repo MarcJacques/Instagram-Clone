@@ -10,20 +10,28 @@ import SwiftUI
 struct ProfileView: View {
     
     var columns: [GridItem] = [
-        GridItem(.adaptive(minimum: 100, maximum: 150), spacing: 0, alignment: .center)
+        GridItem(.fixed(150)),
+        GridItem(.fixed(150)),
+        GridItem(.fixed(150))
     ]
     
     var body: some View {
         NavigationView {
-            VStack {
+            ScrollView {
                 ProfileHeaderView()
                     .padding()
-                LazyVGrid(columns: columns, content: {
-                    ForEach(0...90, id: \.self) { num in
-                        let imageName = "Image \(Int.random(in: 1...4))"
-                        Image(imageName)
-                            .resizable()
-                            .aspectRatio(contentMode: .fill)
+                
+                LazyVGrid(columns: columns, alignment: .center, spacing: 0, pinnedViews: [.sectionHeaders], content: {
+                    
+                    Section {
+                        LazyVGrid(columns: columns, content: {
+                            ForEach(0...90, id: \.self) { num in
+                                let imageName = "Image \(Int.random(in: 1...4))"
+                                Image(imageName)
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit)
+                            }
+                        })
                     }
                 })
             }
