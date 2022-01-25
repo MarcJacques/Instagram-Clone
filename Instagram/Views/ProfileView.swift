@@ -19,12 +19,7 @@ struct ProfileView: View {
         NavigationView {
             ScrollView {
                 ProfileHeaderView()
-                    .padding()
-                
-                LazyVGrid(columns: columns, alignment: .center, spacing: 0, pinnedViews: [.sectionHeaders], content: {
-                    
-                    Section {
-                        LazyVGrid(columns: columns, content: {
+                LazyVGrid(columns: columns, content: {
                             ForEach(0...90, id: \.self) { num in
                                 let imageName = "Image \(Int.random(in: 1...4))"
                                 Image(imageName)
@@ -33,8 +28,6 @@ struct ProfileView: View {
                             }
                         })
                     }
-                })
-            }
             .navigationBarTitle("instaClone", displayMode: .inline)
         }
     }
