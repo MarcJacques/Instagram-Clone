@@ -19,15 +19,18 @@ struct ProfileView: View {
         NavigationView {
             ScrollView {
                 ProfileHeaderView()
-                LazyVGrid(columns: columns, content: {
-                            ForEach(0...90, id: \.self) { num in
-                                let imageName = "Image \(Int.random(in: 1...4))"
-                                Image(imageName)
-                                    .resizable()
-                                    .aspectRatio(contentMode: .fit)
-                            }
-                        })
+                
+                LazyVGrid(columns: columns, spacing: 1, content: {
+                    ForEach(0...90, id: \.self) { num in
+                        let imageName = "Image \(Int.random(in: 1...4))"
+                        Image(imageName)
+                            .resizable()
+//                            .frame(width: 150, height: 150, alignment: .center)
+                            .aspectRatio(contentMode: .fill)
                     }
+                })
+            }
+            .padding()
             .navigationBarTitle("instaClone", displayMode: .inline)
         }
     }
@@ -35,7 +38,7 @@ struct ProfileView: View {
 
 struct ProfileHeaderView: View  {
     var body: some View {
-        VStack {
+        VStack(alignment: .leading) {
             // user avatar & following counts
             HStack {
                 Image("user\(Int.random(in: 1...4))")
@@ -43,6 +46,7 @@ struct ProfileHeaderView: View  {
                     .aspectRatio( contentMode: .fill)
                     .frame(width: 100, height: 100, alignment: .center)
                     .cornerRadius(50)
+                    .padding()
                 VStack {
                     HeaderCountButtonsView()
                     
@@ -51,7 +55,7 @@ struct ProfileHeaderView: View  {
                     }, label: {
                         Text("Edit Profile")
                             .foregroundColor(Color(.label))
-                            .frame(width: 220, height: 44, alignment: .center)
+                            .frame(width: 280, height: 35, alignment: .center)
                             .background(Color(.secondarySystemBackground))
                             .cornerRadius(8)
                     })
@@ -61,6 +65,8 @@ struct ProfileHeaderView: View  {
             HStack {
                 Text("On a journey to learn Swift.\nAlso SwiftUI is really cool!")
                     .multilineTextAlignment(.leading)
+                    .padding(.bottom, 20)
+                    .padding(.leading, 20)
                 Spacer()
             }
         }
@@ -78,7 +84,7 @@ struct HeaderCountButtonsView: View {
                     .foregroundColor(Color(.label))
                     .multilineTextAlignment(.center)
             })
-                .padding()
+                .frame(width: 50, height: 50, alignment: .center)
             Button(action: {
                 //nil
             }, label: {
@@ -86,7 +92,8 @@ struct HeaderCountButtonsView: View {
                     .foregroundColor(Color(.label))
                     .multilineTextAlignment(.center)
             })
-                .padding(5)
+                .frame(width: 80, height: 50, alignment: .center)
+                .padding()
             Button(action: {
                 //nil
             }, label: {
@@ -94,7 +101,8 @@ struct HeaderCountButtonsView: View {
                     .foregroundColor(Color(.label))
                     .multilineTextAlignment(.center)
             })
-                .padding(5)
+                .frame(width: 80, height: 50, alignment: .center)
+                .padding()
         }
     }
 }
