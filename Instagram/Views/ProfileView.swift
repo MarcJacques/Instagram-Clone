@@ -11,7 +11,7 @@ struct ProfileView: View {
     
     var columns: [GridItem] = [
         GridItem(.adaptive(minimum: 100, maximum: 150), spacing: 0, alignment: .center)
-                 ]
+    ]
     
     var body: some View {
         NavigationView {
@@ -22,9 +22,8 @@ struct ProfileView: View {
                     ForEach(0...90, id: \.self) { num in
                         let imageName = "Image \(Int.random(in: 1...4))"
                         Image(imageName)
-                            .resizeable()
+                            .resizable()
                             .aspectRatio(contentMode: .fill)
-                        
                     }
                 })
             }
