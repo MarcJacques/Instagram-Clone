@@ -23,10 +23,16 @@ struct ProfileView: View {
                 LazyVGrid(columns: columns, spacing: 1, content: {
                     ForEach(0...90, id: \.self) { num in
                         let imageName = "Image \(Int.random(in: 1...4))"
-                        Image(imageName)
-                            .resizable()
-//                            .frame(width: 150, height: 150, alignment: .center)
-                            .aspectRatio(contentMode: .fill)
+                        NavigationLink(
+                            destination: PostView(userImageName: "user2", imageName: imageName)
+                                .navigationBarTitle("Photo", displayMode: .inline),
+                                       label: {
+                            Image(imageName)
+                                               .resizable()
+//                                               .frame(width: 150, height: 150, alignment: .center)
+                                               .aspectRatio(contentMode: .fill)
+                        })
+               
                     }
                 })
             }
