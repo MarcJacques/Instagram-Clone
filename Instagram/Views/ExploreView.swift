@@ -20,13 +20,13 @@ struct ExploreView: View {
     var body: some View {
         NavigationView {
             VStack {
-                TextField("Search...", text: $text)
-                    .padding(10)
-                    .background(Color(.secondarySystemBackground))
-                    .cornerRadius(12)
-                    .padding()
-                
                 ScrollView {
+                    TextField("Search...", text: $text)
+                        .padding(10)
+                        .background(Color(.secondarySystemBackground))
+                        .cornerRadius(12)
+                        .padding()
+                    
                     LazyVGrid(columns:columns, content:  {
                         ForEach(0...20, id: \.self) { num in
                             let name = imageNames.randomElement() ?? "Image 1"
@@ -36,8 +36,8 @@ struct ExploreView: View {
                             label: {
                                 Image(name)
                                     .resizable()
-                                    .frame(width: 200, height: 200, alignment: .center)
-                                    .aspectRatio(contentMode: .fill)
+//                                    .frame(width: 200, height: 200, alignment: .center)
+                                    .aspectRatio(contentMode: .fit)
                                     .foregroundColor(Color.red)
                             })
                             
